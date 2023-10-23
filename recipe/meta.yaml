@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   script: 
     - CMAKE_GENERATOR="Ninja" {{ PYTHON }} -m pip install . -vv     # [linux or osx] 
     - {{ PYTHON }} -m pip install . -vv     # [win] 
@@ -42,6 +42,7 @@ requirements:
     - matplotlib-base
     - khronos-opencl-icd-loader          # [win or osx] 
     - ocl-icd          # [linux]
+    - libcxx         # [osx]
     
 test:
   imports:

@@ -42,6 +42,7 @@ requirements:
     - matplotlib-base
     - khronos-opencl-icd-loader          # [win or osx] 
     - ocl-icd          # [linux]
+    - libcxx         # [osx]
     
 test:
   imports:

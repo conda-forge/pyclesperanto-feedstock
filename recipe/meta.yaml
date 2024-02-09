@@ -1,19 +1,19 @@
 {% set name = "pyclesperanto" %}
-{% set version = "0.7.3" %}
-{% set sha256 = "0e85a8ed94f5308ce9d5d27ec101ada44003a57015fd1f7e1f33b1ec71046bbe" %}
+{% set version = "0.8.0" %}
+{% set sha256 = "ea60de2b6a1920e25b25f19c69b74f3e6284f4da9bf8dfaa10ea8e5b439b3e1f" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
-  
+
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   skip: true  # [python_impl == 'pypy' and (aarch64 or ppc64le)]
-  number: 7
-  script: 
+  number: 0
+  script:
     - CMAKE_GENERATOR="Ninja" {{ PYTHON }} -m pip install . -vv     # [linux or osx] 
     - {{ PYTHON }} -m pip install . -vv     # [win] 
 
@@ -44,7 +44,6 @@ requirements:
     - khronos-opencl-icd-loader          # [win or osx] 
     - ocl-icd          # [linux]
     - libcxx         # [osx]
-    
 test:
   imports:
     - pyclesperanto
@@ -58,16 +57,16 @@ test:
     - pytest tests
 
 about:
-    home: https://pypi.org/project/pyclesperanto/
-    doc_url: https://clesperanto.github.io/pyclesperanto/
-    dev_url: https://github.com/clEsperanto/pyclesperanto/
-    license: BSD-3-Clause
-    license_file: LICENSE
-    summary: GPU-accelerated Image Processing library using OpenCL 
-    description: |
-        pyclesperanto is the python package of clEsperanto - a multi-language framework for GPU-accelerated image processing. 
-        clEsperanto uses OpenCL kernels extended with CLIJ custom syntax.
+  home: https://pypi.org/project/pyclesperanto/
+  doc_url: https://clesperanto.github.io/pyclesperanto/
+  dev_url: https://github.com/clEsperanto/pyclesperanto/
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: GPU-accelerated Image Processing library using OpenCL
+  description: |
+    pyclesperanto is the python package of clEsperanto - a multi-language framework for GPU-accelerated image processing. 
+    clEsperanto uses OpenCL kernels extended with CLIJ custom syntax.
 extra:
-    recipe-maintainers:
-        - StRigaud
-        - haesleinhuepf
+  recipe-maintainers:
+    - StRigaud
+    - haesleinhuepf

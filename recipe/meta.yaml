@@ -49,6 +49,7 @@ test:
     - pyclesperanto
   requires:
     - pytest
+    - scikit-image
     - pocl          # [linux or osx]
     - oclgrind          # [win]
   source_files:

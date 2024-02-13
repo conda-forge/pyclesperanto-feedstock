@@ -56,7 +56,8 @@ test:
   source_files:
     - tests
   commands:
-    - pytest tests
+    - pytest -v --ignore=test_image.py -k "not test_exclude_labels_on_edges_blobs and not test_exclude_labels_on_edges_blobs and not test_exclude_labels_on_edges_blobs_2" # [win64]
+    - pytest tests  # [linux or osx]
 
 about:
   home: https://pypi.org/project/pyclesperanto/

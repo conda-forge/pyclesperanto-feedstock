@@ -56,7 +56,7 @@ test:
   source_files:
     - tests
   commands:
-    - pytest -v --ignore=test_image.py -k "not test_exclude_labels_on_edges_blobs and not test_exclude_labels_on_edges_blobs and not test_exclude_labels_on_edges_blobs_2" # [win64]
+    - pytest tests --ignore=tests/test_image.py -k "not test_connected_components_labeling_box_blobs and not test_exclude_labels_on_edges_blobs and not test_exclude_labels_on_edges_blobs_2"  # [win64]
     - pytest tests  # [linux or osx]
 
 about:

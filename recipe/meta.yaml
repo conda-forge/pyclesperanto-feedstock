@@ -1,6 +1,7 @@
 {% set name = "pyclesperanto" %}
-{% set version = "0.8.2" %}
-{% set sha256 = "ff6f22cfbb5fd6d09f32870b0c95893c55513773c41b72c000439b58acd69503" %}
+{% set version = "0.9.0" %}
+{% set build_number = 3 %}
+{% set sha256 = "39124558d40eac82c054b55ac7b6df087531a10b7f9341ee308fd3e85a7503de" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +13,7 @@ source:
 
 build:
   skip: true  # [python_impl == 'pypy' and (aarch64 or ppc64le)]
-  number: 0
+  number: {{ build_number }}
   script:
     - CMAKE_GENERATOR="Ninja" {{ PYTHON }} -m pip install . -vv     # [linux or osx] 
     - {{ PYTHON }} -m pip install . -vv     # [win] 
@@ -44,20 +45,21 @@ requirements:
     - khronos-opencl-icd-loader          # [win or osx] 
     - ocl-icd          # [linux]
     - libcxx         # [osx]
+    
 test:
   imports:
-    - pyclesperanto
+    - {{ name }}
   requires:
     - pytest
     - scikit-image
     - pocl          # [linux or osx]
-    # - oclgrind          # [win]
-    - intel-opencl-rt   # [win64]
+    - oclgrind          # [win]
+    # - intel-opencl-rt   # [win64]
   source_files:
     - tests
   commands:
-    - pytest tests --ignore=tests/test_image.py -k "not test_connected_components_labeling_box_blobs and not test_exclude_labels_on_edges_blobs and not test_exclude_labels_on_edges_blobs_2"  # [win64]
-    - pytest tests  # [linux or osx]
+    # - pytest tests --ignore=tests/test_image.py -k "not test_connected_components_labeling_box_blobs and not test_exclude_labels_on_edges_blobs and not test_exclude_labels_on_edges_blobs_2"  # [win64]
+    - pytest -v tests/   # [linux]
 
 about:
   home: https://pypi.org/project/pyclesperanto/

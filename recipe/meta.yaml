@@ -1,6 +1,6 @@
 {% set name = "pyclesperanto" %}
 {% set version = "0.9.0" %}
-{% set build_number = 2 %}
+{% set build_number = 3 %}
 {% set sha256 = "39124558d40eac82c054b55ac7b6df087531a10b7f9341ee308fd3e85a7503de" %}
 
 package:
@@ -59,7 +59,7 @@ test:
     - tests
   commands:
     # - pytest tests --ignore=tests/test_image.py -k "not test_connected_components_labeling_box_blobs and not test_exclude_labels_on_edges_blobs and not test_exclude_labels_on_edges_blobs_2"  # [win64]
-    - pytest -v tests/   # [linux or osx]
+    - pytest -v tests/   # [linux]
 
 about:
   home: https://pypi.org/project/pyclesperanto/

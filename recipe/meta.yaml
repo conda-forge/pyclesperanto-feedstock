@@ -1,7 +1,7 @@
 {% set name = "pyclesperanto" %}
-{% set version = "0.9.0" %}
-{% set build_number = 3 %}
-{% set sha256 = "39124558d40eac82c054b55ac7b6df087531a10b7f9341ee308fd3e85a7503de" %}
+{% set version = "0.9.1" %}
+{% set build_number = 0 %}
+{% set sha256 = "d3ad978ae7061dd0bde7fd9da2d1ecae61f17c1bffd7b15c670cf09a660a56ac" %}
 
 package:
   name: {{ name|lower }}
@@ -45,7 +45,6 @@ requirements:
     - khronos-opencl-icd-loader          # [win or osx] 
     - ocl-icd          # [linux]
     - libcxx         # [osx]
-    
 test:
   imports:
     - {{ name }}

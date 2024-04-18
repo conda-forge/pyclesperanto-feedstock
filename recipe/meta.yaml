@@ -27,6 +27,7 @@ requirements:
     - cmake
     - ninja          # [linux or osx] 
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
 
   host:
     - pip

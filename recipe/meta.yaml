@@ -1,7 +1,7 @@
 {% set name = "pyclesperanto" %}
-{% set version = "0.10.3" %}
+{% set version = "0.11.0" %}
 {% set build_number = 0 %}
-{% set sha256 = "2f07a3f9f2ce2cee5983afb5163182cd9cf48b7b374a8e349ffe1162ad614c7b" %}
+{% set sha256 = "b08914efa66b919626cb09006537d63fbff085b935d33143471c7b22cf875254" %}
 
 package:
   name: {{ name|lower }}

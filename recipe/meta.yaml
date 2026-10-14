@@ -1,14 +1,14 @@
 {% set name = "pyclesperanto" %}
-{% set version = "0.19.0" %}
+{% set version = "0.25.0" %}
 {% set build_number = 0 %}
-{% set sha256 = "5485984cdc981c518430af8245ddbdc4760d2af3763ff43b979883728d3a476d" %}
+{% set sha256 = "5692e2617153aa7c298d3796e90f9ad14177847f16220bfaf02b428149a0fb30" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
